@@ -1,0 +1,53 @@
+\documentclass[]{article}
+\usepackage[braket]{qcircuit}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{figure}
+    \Qcircuit @C=1em @R=.7em {
+    \lstick{\ket{x_0}} & \ctrlo{3} & \qw \\
+    \lstick{\ket{x_1}} & \qw & \qw \\
+    \lstick{\ket{x_2}} & \ctrl{1} & \qw \\
+    \lstick{\ket{y}} & \targ & \qw & \rstick{\ket{y \oplus \bar{x_0}x_2}}
+    }
+\end{figure}
+
+\begin{figure}
+    \Qcircuit @C=1em @R=.7em {
+    \lstick{\ket{x_0}} & \ctrl{2} & \qw \\
+    \lstick{\ket{x_1}} & \ctrl{1} & \qw \\
+    \lstick{\ket{y}} & \targ & \qw & \rstick{\ket{y \oplus x_0x_1}}
+    }
+\end{figure}
+
+\begin{figure}
+    \Qcircuit @C=1em @R=.7em {
+    & \gate{X} & \ctrl{0} & \gate{X} & \qw
+    }
+\end{figure}
+
+\begin{figure}
+    $$
+        ((x_0 \lor x_1) \land \overline{x_2}) \\
+    $$
+    $$
+        \downarrow
+    $$
+    $$
+        ((x_0) \oplus (x_1) \oplus (x_0 \land x_1)) \land \overline{x_2}
+    $$
+\end{figure}
+
+\begin{figure}
+    $$
+        (1 - 2p)^2 \ge \frac{m}{m + 1.96^2}
+    $$
+\end{figure}
+
+\begin{figure}
+    $$
+        (x_0 \land \overline{x_0})
+    $$
+\end{figure}
+
+\end{document}
